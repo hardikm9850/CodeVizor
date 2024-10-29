@@ -5,14 +5,14 @@
     <vendor>hardikm9850</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <!--<depends>com.intellij.psi</depends>-->
+    <depends>org.jetbrains.kotlin</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow factoryClass="com.github.hardikm9850.codevizor.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <codeInsight.lineMarkerProvider language="kotlin"
+                                        implementationClass="com.github.hardikm9850.codevizor.marker.SideEffectLineMarkerProvider"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.hardikm9850.codevizor.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
 </idea-plugin>
